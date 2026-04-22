@@ -1,0 +1,284 @@
+/* ================================================================
+   company.css — individual research / company page styles
+   ================================================================ */
+
+/* ---- Company Hero ---- */
+.company-hero {
+  padding: calc(var(--nav-height) + 80px) 0 80px;
+  border-bottom: 1px solid var(--border);
+}
+
+.company-breadcrumb {
+  font-size: 0.68rem;
+  letter-spacing: 0.06em;
+  color: var(--text-muted);
+  margin-bottom: 28px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+.company-breadcrumb a {
+  color: var(--text-muted);
+  transition: color 0.2s;
+}
+.company-breadcrumb a:hover { color: var(--text-secondary); }
+.company-breadcrumb .sep { color: var(--border); opacity: 1; }
+
+.company-meta {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  margin-bottom: 28px;
+  flex-wrap: wrap;
+}
+.company-date {
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  color: var(--text-muted);
+}
+
+.company-title {
+  font-family: var(--font-display);
+  font-size: clamp(2.5rem, 5.5vw, 4.8rem);
+  font-weight: 300;
+  line-height: 1.08;
+  color: var(--text-primary);
+  margin-bottom: 28px;
+  letter-spacing: -0.01em;
+}
+.company-title em {
+  font-style: italic;
+  color: var(--accent);
+}
+
+.company-rating {
+  font-size: 0.82rem;
+  color: var(--text-secondary);
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+.rating-badge {
+  display: inline-block;
+  font-size: 0.62rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  font-weight: 500;
+  background: rgba(110, 195, 140, 0.1);
+  color: #80c89a;
+  border: 1px solid rgba(110, 195, 140, 0.22);
+  padding: 3px 11px;
+  border-radius: 2px;
+}
+
+/* ---- Thesis Section ---- */
+.company-thesis {
+  padding: 80px 0;
+  border-bottom: 1px solid var(--border);
+}
+.thesis-grid {
+  display: grid;
+  grid-template-columns: 1fr 280px;
+  gap: 80px;
+  align-items: start;
+}
+.thesis-main .section-label { margin-bottom: 24px; }
+.thesis-main p {
+  font-size: 0.92rem;
+  color: var(--text-secondary);
+  line-height: 1.95;
+  margin-bottom: 20px;
+}
+.thesis-metrics {
+  border-left: 1px solid var(--border);
+  padding-left: 44px;
+}
+.metric-item {
+  padding: 18px 0;
+  border-bottom: 1px solid var(--border);
+}
+.metric-item:first-child { padding-top: 0; }
+.metric-item:last-child { border-bottom: none; }
+.metric-label {
+  display: block;
+  font-size: 0.64rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin-bottom: 5px;
+}
+.metric-value {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  font-weight: 400;
+  color: var(--text-primary);
+  line-height: 1;
+}
+
+/* ---- Downloads Section ---- */
+.company-downloads {
+  padding: 80px 0;
+  border-bottom: 1px solid var(--border);
+}
+.download-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
+  gap: 20px;
+}
+.download-card {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  background: var(--bg-surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 40px;
+  transition: border-color 0.3s, transform 0.3s cubic-bezier(0.22,1,0.36,1), box-shadow 0.3s;
+}
+.download-card:hover {
+  border-color: var(--border-gold);
+  transform: translateY(-4px);
+  box-shadow: 0 20px 48px rgba(0,0,0,0.4);
+}
+.download-icon {
+  width: 40px;
+  height: 40px;
+  color: var(--accent);
+  flex-shrink: 0;
+}
+.download-icon svg { width: 100%; height: 100%; }
+.download-type {
+  display: block;
+  font-size: 0.62rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 6px;
+}
+.download-title {
+  font-family: var(--font-display);
+  font-size: 1.45rem;
+  font-weight: 400;
+  color: var(--text-primary);
+  margin-bottom: 10px;
+}
+.download-desc {
+  font-size: 0.82rem;
+  color: var(--text-secondary);
+  line-height: 1.8;
+}
+.download-cta {
+  margin-top: auto;
+  font-size: 0.74rem;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  color: var(--accent);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.download-card:hover .arrow { 
+  display: inline-block;
+  animation: nudgeDown 0.35s ease forwards;
+}
+@keyframes nudgeDown {
+  0%   { transform: translateY(0); }
+  50%  { transform: translateY(3px); }
+  100% { transform: translateY(0); }
+}
+
+/* ---- Scope / What's Inside ---- */
+.company-scope {
+  padding: 80px 0;
+  border-bottom: 1px solid var(--border);
+}
+.scope-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  overflow: hidden;
+}
+.scope-item {
+  padding: 36px 32px;
+  border-right: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  transition: background 0.25s;
+}
+.scope-item:nth-child(3n)       { border-right: none; }
+.scope-item:nth-last-child(-n+3){ border-bottom: none; }
+.scope-item:hover { background: var(--bg-surface); }
+
+.scope-num {
+  display: block;
+  font-family: var(--font-mono);
+  font-size: 0.64rem;
+  color: var(--accent);
+  letter-spacing: 0.1em;
+  margin-bottom: 14px;
+  opacity: 0.8;
+}
+.scope-item h4 {
+  font-family: var(--font-display);
+  font-size: 1.05rem;
+  font-weight: 500;
+  color: var(--text-primary);
+  margin-bottom: 10px;
+  line-height: 1.3;
+}
+.scope-item p {
+  font-size: 0.78rem;
+  color: var(--text-secondary);
+  line-height: 1.75;
+}
+
+/* ---- Disclaimer ---- */
+.disclaimer {
+  font-size: 0.7rem;
+  color: var(--text-muted);
+  line-height: 1.75;
+  border-top: 1px solid var(--border);
+  padding: 36px 0;
+}
+
+/* ---- Nav back link (company pages) ---- */
+.nav-back {
+  font-size: 0.7rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--text-secondary);
+  transition: color 0.2s;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.nav-back:hover { color: var(--accent); }
+
+/* ---- Responsive ---- */
+@media (max-width: 880px) {
+  .thesis-grid { grid-template-columns: 1fr; gap: 48px; }
+  .thesis-metrics {
+    border-left: none; padding-left: 0;
+    border-top: 1px solid var(--border); padding-top: 36px;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 0;
+  }
+  .metric-item { border-right: 1px solid var(--border); padding: 16px 20px 16px 0; }
+  .metric-item:nth-child(even) { border-right: none; padding-left: 20px; }
+  .scope-grid { grid-template-columns: repeat(2, 1fr); }
+  .scope-item:nth-child(3n)        { border-right: 1px solid var(--border); }
+  .scope-item:nth-child(2n)        { border-right: none; }
+  .scope-item:nth-last-child(-n+3) { border-bottom: 1px solid var(--border); }
+  .scope-item:nth-last-child(-n+2) { border-bottom: none; }
+}
+@media (max-width: 600px) {
+  .company-title { font-size: clamp(2.2rem, 9vw, 3rem); }
+  .scope-grid { grid-template-columns: 1fr; }
+  .scope-item { border-right: none !important; }
+  .scope-item:last-child { border-bottom: none !important; }
+  .scope-item:nth-last-child(-n+2) { border-bottom: 1px solid var(--border) !important; }
+  .download-grid { grid-template-columns: 1fr; }
+  .thesis-metrics { grid-template-columns: 1fr; }
+  .metric-item { border-right: none !important; padding-left: 0 !important; }
+}
