@@ -256,16 +256,52 @@
 }
 .nav-back:hover { color: var(--accent); }
 
+/* ---- Company subtitle (replaces rating badge) ---- */
+.company-subtitle {
+  font-size: 0.82rem;
+  color: var(--text-secondary);
+  letter-spacing: 0.04em;
+}
+
+/* ---- Methodology list ---- */
+.thesis-methodology {
+  border-left: 1px solid var(--border);
+  padding-left: 44px;
+}
+.methodology-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+.methodology-item {
+  display: flex;
+  align-items: baseline;
+  gap: 14px;
+  padding: 14px 0;
+  border-bottom: 1px solid var(--border);
+}
+.methodology-item:last-child { border-bottom: none; }
+.methodology-num {
+  font-family: var(--font-mono);
+  font-size: 0.62rem;
+  color: var(--accent);
+  opacity: 0.7;
+  flex-shrink: 0;
+  letter-spacing: 0.08em;
+}
+.methodology-text {
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+  line-height: 1.5;
+}
+
 /* ---- Responsive ---- */
 @media (max-width: 880px) {
   .thesis-grid { grid-template-columns: 1fr; gap: 48px; }
-  .thesis-metrics {
+  .thesis-methodology {
     border-left: none; padding-left: 0;
     border-top: 1px solid var(--border); padding-top: 36px;
-    display: grid; grid-template-columns: 1fr 1fr; gap: 0;
   }
-  .metric-item { border-right: 1px solid var(--border); padding: 16px 20px 16px 0; }
-  .metric-item:nth-child(even) { border-right: none; padding-left: 20px; }
   .scope-grid { grid-template-columns: repeat(2, 1fr); }
   .scope-item:nth-child(3n)        { border-right: 1px solid var(--border); }
   .scope-item:nth-child(2n)        { border-right: none; }
