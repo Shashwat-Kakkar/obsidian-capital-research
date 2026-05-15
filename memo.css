@@ -1,0 +1,203 @@
+/* ================================================================
+   OBSIDIAN CAPITAL RESEARCH — memo.css
+   Styles for individual memo / essay pages
+   ================================================================ */
+
+/* ---- Memo Hero ---- */
+.memo-hero {
+  padding: calc(var(--nav-height) + 72px) 0 64px;
+  border-bottom: 1px solid var(--border);
+}
+.memo-breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.68rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin-bottom: 40px;
+}
+.memo-breadcrumb a { color: var(--text-muted); transition: color 0.2s; }
+.memo-breadcrumb a:hover { color: var(--accent); }
+.memo-breadcrumb-sep { opacity: 0.4; }
+
+.memo-type-label {
+  font-size: 0.62rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 20px;
+}
+.memo-title {
+  font-family: var(--font-display);
+  font-size: clamp(2.4rem, 5vw, 4rem);
+  font-weight: 300;
+  line-height: 1.1;
+  color: var(--text-primary);
+  margin-bottom: 16px;
+  max-width: 780px;
+}
+.memo-subtitle {
+  font-family: var(--font-display);
+  font-size: clamp(1.1rem, 2vw, 1.45rem);
+  font-style: italic;
+  font-weight: 300;
+  color: var(--text-secondary);
+  margin-bottom: 36px;
+  max-width: 640px;
+}
+.memo-meta {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+  flex-wrap: wrap;
+}
+.memo-meta-author {
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+}
+.memo-meta-author strong {
+  color: var(--text-primary);
+  font-weight: 500;
+}
+.memo-meta-divider {
+  width: 1px;
+  height: 14px;
+  background: var(--border);
+}
+.memo-meta-item {
+  font-family: var(--font-mono);
+  font-size: 0.66rem;
+  color: var(--text-muted);
+  letter-spacing: 0.06em;
+}
+.memo-tags {
+  display: flex;
+  gap: 7px;
+  flex-wrap: wrap;
+  margin-top: 28px;
+}
+
+/* ---- Memo Body ---- */
+.memo-layout {
+  display: grid;
+  grid-template-columns: 1fr 260px;
+  gap: 80px;
+  align-items: start;
+  padding: 72px 0 96px;
+}
+
+.memo-content {
+  max-width: 680px;
+}
+.memo-content p {
+  font-size: 1rem;
+  color: var(--text-secondary);
+  line-height: 2;
+  margin-bottom: 28px;
+}
+.memo-content p:first-child { color: var(--text-primary); }
+.memo-content h2 {
+  font-family: var(--font-display);
+  font-size: 1.65rem;
+  font-weight: 400;
+  color: var(--text-primary);
+  line-height: 1.2;
+  margin: 52px 0 20px;
+}
+.memo-content h2:first-child { margin-top: 0; }
+.memo-content strong {
+  color: var(--text-primary);
+  font-weight: 500;
+}
+.memo-content em {
+  font-style: italic;
+  color: var(--text-primary);
+}
+.memo-content hr {
+  border: none;
+  border-top: 1px solid var(--border);
+  margin: 52px 0;
+}
+
+/* ---- Sidebar ---- */
+.memo-sidebar {
+  position: sticky;
+  top: calc(var(--nav-height) + 32px);
+}
+.memo-sidebar-block {
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 28px;
+  margin-bottom: 20px;
+}
+.memo-sidebar-label {
+  font-size: 0.6rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 16px;
+}
+.memo-sidebar-toc {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+.memo-sidebar-toc li a {
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  line-height: 1.6;
+  display: block;
+  padding: 5px 0;
+  border-bottom: 1px solid transparent;
+  transition: color 0.2s;
+}
+.memo-sidebar-toc li a:hover { color: var(--text-primary); }
+.memo-sidebar-related {
+  font-size: 0.82rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+.memo-sidebar-related a {
+  color: var(--accent);
+  transition: color 0.2s;
+}
+.memo-sidebar-related a:hover { color: var(--accent-light); }
+
+/* ---- Footer Bar ---- */
+.memo-footer-bar {
+  border-top: 1px solid var(--border);
+  padding: 40px 0;
+}
+.memo-footer-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+.memo-back-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.72rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-secondary);
+  transition: color 0.2s;
+}
+.memo-back-link:hover { color: var(--accent); }
+.memo-back-link .arrow-left { transition: transform 0.22s; }
+.memo-back-link:hover .arrow-left { transform: translateX(-4px); }
+
+/* ---- Responsive ---- */
+@media (max-width: 880px) {
+  .memo-layout { grid-template-columns: 1fr; gap: 48px; }
+  .memo-sidebar { position: static; }
+}
+@media (max-width: 600px) {
+  .memo-hero { padding-top: calc(var(--nav-height) + 40px); }
+  .memo-title { font-size: clamp(2rem, 9vw, 2.8rem); }
+}
