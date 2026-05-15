@@ -686,6 +686,7 @@ footer {
   .nav-toggle { display: flex; }
   .mobile-menu ul { padding: 28px 24px 32px; }
   .research-grid { grid-template-columns: 1fr; }
+  #hero { padding-left: 24px; padding-right: 24px; padding-bottom: 64px; }
   .hero-title { font-size: clamp(2.6rem, 11vw, 3.8rem); }
   .about-credentials { grid-template-columns: 1fr; }
   .credential-item { border-right: none !important; padding-left: 0 !important; }
